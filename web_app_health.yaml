@@ -1,0 +1,12 @@
+---
+- name: Check for web based application health
+  hosts: all
+
+
+  tasks:
+   - name: Check that you can connect (GET) to a page and it returns a status 200
+     uri:
+       url: http://54.190.212.205/
+     return_content: yes
+     register: app_health
+     failed_when: {{ app_health.status }} != 200
