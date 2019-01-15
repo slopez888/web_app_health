@@ -14,7 +14,8 @@
      ##failed_when: app_health.status != 200
      
    - name: "Print status"
-     debug: "{{ app_health.status }}"
+     debug: 
+       var: app_health.status
      changed_when: app_health.status != 200
      notify: App is not running, restart HTTPD
 
