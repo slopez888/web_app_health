@@ -9,4 +9,4 @@
        url: http://54.190.212.205/
      return_content: yes
      register: app_health
-     failed_when: {{ app_health.status }} != 200
+     failed_when: {{ app_health.status != 200 }}
