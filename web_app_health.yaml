@@ -10,13 +10,15 @@
        return_content: yes
      register: app_health
      ignore_errors: True
-     changed_when: False
-     #failed_when: app_health.status != 200
-     
-   - name: "Print status"
-     debug: msg=""
      changed_when: app_health.status != 200
      notify: App is not running, restart HTTPD
+     #changed_when: False
+     ##failed_when: app_health.status != 200
+     
+   #- name: "Print status"
+   #  debug: msg=""
+   #  changed_when: app_health.status != 200
+   #  notify: App is not running, restart HTTPD
 
   handlers: 
    - name: App is not running, restart HTTPD
