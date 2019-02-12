@@ -1,7 +1,6 @@
 - name: Known Error Demo (batch copy fail)
   hosts: web
   connection: local
-  gather_facts: no
 
   vars:
    username:
@@ -11,6 +10,7 @@
   tasks:
 
     - name: Batch job - copy files remotely
+      become_user: student1
       copy: 
         src: /home/student1/testdir/dummy.iso
         dest: /tmp/dummy.iso
