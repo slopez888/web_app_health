@@ -1,5 +1,5 @@
 - name: Known Error Demo (batch copy fail)
-  hosts: all
+  hosts: web
   connection: local
   become_method: sudo
   become_user: root
@@ -16,7 +16,8 @@
         dest: /tmp/dummy.iso
       #validate: /usr/sbin/visudo -cf %s
       register: errorCode
-      changed_when:  "'Killed' in errorCode.stderr"
+      ignore_errors: True
+      changed_when: "'Killed' in errorCode.stdout"
 
     - name: look at errorCode
       debug:
