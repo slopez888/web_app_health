@@ -15,8 +15,8 @@
         remote_src: yes
       #validate: /usr/sbin/visudo -cf %s
       register: errorCode
-      ignore_errors: True
-      changed_when: False
+      #ignore_errors: True
+      #changed_when: False
 
     - name: look at errorCode
       debug:
