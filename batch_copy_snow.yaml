@@ -1,13 +1,12 @@
 - name: Known Error Demo (batch copy fail)
   hosts: all
   connection: local
+  vars:
+   username:
+   password:
+   instance:
+  
   tasks:
-
-    - name: CREDENTIALS FOR SERVICENOW
-      vars:
-        username:
-        password:
-        instance:
 
     - name: Batch job - copy files remotely
       copy: 
