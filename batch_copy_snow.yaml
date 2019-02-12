@@ -11,9 +11,9 @@
   tasks:
 
     - name: Batch job - copy files remotely
-      copy: 
-        src: ~/testdir/dummy.iso
-        dest: /tmp/dummy.iso
+      command: 
+         ~/testdir/dummy.iso
+         /tmp/dummy.iso
       #validate: /usr/sbin/visudo -cf %s
       register: errorCode
       ignore_errors: True
@@ -22,7 +22,7 @@
     - name: look at errorCode
       debug:
         var: errorCode
-      changed_when: "'Killed' in errorCode.stdout"
+      #changed_when: "'Killed' in errorCode.stdout"
 
     - name: SERVICENOW incident created if Known Error detected
       block:
