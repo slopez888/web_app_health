@@ -1,9 +1,5 @@
 - name: Known Error Demo (batch copy fail)
   hosts: all
-  vars:
-    username: admin
-    password: MyPassw0rd21
-    instance: dev14202
   
   tasks:
 
@@ -36,9 +32,9 @@
         - name: CREATE AN INCIDENT
           connection: local
           snow_record:
-            username: "{{username}}"
-            password: "{{password}}"
-            instance: "{{instance}}"
+            username: admin
+            password: MyPassw0rd21
+            instance: dev14202
             state: present
             table: incident
             data:
