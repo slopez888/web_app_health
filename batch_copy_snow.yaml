@@ -1,5 +1,5 @@
 - name: Known Error Demo (batch copy fail)
-  hosts: web
+  hosts: all
 
   vars:
    username:
@@ -11,7 +11,7 @@
     - name: Batch job - copy files remotely
       copy:
         src: /mnt/testdir/dummy.iso 
-        dest: /tmp/dummy.iso
+        dest: /tmp/testdir/dummy.iso
         remote_src: yes
       #validate: /usr/sbin/visudo -cf %s
       register: errorCode
