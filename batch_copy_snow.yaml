@@ -22,14 +22,15 @@
       command: cp /mnt/testdir/dummy.iso /tmp/testdir/dummy.iso
       #validate: /usr/sbin/visudo -cf %s
       register: errorCode
-      #ignore_errors: True
+      ignore_errors: True
       #changed_when: False
+      changed_when: "errorCode.rc = -9"
 
     - name: look at errorCode
       debug:
         var: errorCode
       #changed_when: "'Killed' in errorCode.stdout"
-      changed_when: "errorCode.rc = -9"
+      #changed_when: "errorCode.rc = -9"
 
     - name: SERVICENOW incident created if Known Error detected
       block:
