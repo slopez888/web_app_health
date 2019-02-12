@@ -42,7 +42,7 @@
           severity: 1
           priority: 2
           caller_id: "System Administrator"
-          comments: "The batch job copy:\n--------\n {% for item ierrorCode.updates %}{{item}}\n{% endfor %}\n--------\n failed on{inventory_hostname}}"
+          comments: "The batch job copy:\n--------\n {% for item in errorCode.updates %}{{item}}\n{% endfor %}\n--------\n failed on{inventory_hostname}}"
       register: snow_var
       delegate_to: localhost
       when: errorCode.changed
