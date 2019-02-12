@@ -10,8 +10,6 @@
   tasks:
 
     - name: Batch job - copy files remotely
-      become: yes
-      become_user: root
       copy: 
         src: /home/student1/testdir/dummy.iso
         dest: /tmp/dummy.iso
