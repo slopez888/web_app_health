@@ -35,6 +35,8 @@
     - name: SERVICENOW incident created if Known Error detected
       block:
         - name: CREATE AN INCIDENT
+          hosts: localhost
+          connection: local
           snow_record:
             username: "{{username}}"
             password: "{{password}}"
