@@ -29,7 +29,7 @@
       debug:
         var: errorCode
       #changed_when: "'Killed' in errorCode.stdout"
-      #changed_when: "errorCode.failed = true"
+      changed_when: "errorCode.rc = -9"
 
     - name: SERVICENOW incident created if Known Error detected
       block:
