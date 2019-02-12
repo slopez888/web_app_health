@@ -10,11 +10,7 @@
   tasks:
 
     - name: Batch job - copy files remotely
-      become_user: student1
-      copy: 
-        src: /home/student1/testdir/dummy.iso
-        dest: /tmp/dummy.iso
-        remote_src: yes
+      command: cp /home/student1/testdir/dummy.iso /tmp/dummy.iso
       #validate: /usr/sbin/visudo -cf %s
       register: errorCode
       ignore_errors: True
