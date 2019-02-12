@@ -1,6 +1,5 @@
 - name: Known Error Demo (batch copy fail)
   hosts: web
-  connection: local
 
   vars:
    username:
