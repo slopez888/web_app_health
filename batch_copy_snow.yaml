@@ -1,10 +1,9 @@
 - name: Known Error Demo (batch copy fail)
   hosts: all
-
   vars:
-   username:
-   password:
-   instance:
+    username:
+    password:
+    instance:
   
   tasks:
 
