@@ -30,7 +30,7 @@
     - name: SERVICENOW incident created if Known Error detected
       #block:
       # - name: CREATE AN INCIDENT
-      connection: local
+      #connection: local
       snow_record:
         username: admin
         password: MyPassw0rd21
