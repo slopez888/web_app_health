@@ -1,6 +1,8 @@
 - name: Known Error Demo (batch copy fail)
   hosts: all
   connection: local
+  become_method: sudo
+  become_user: root
   vars:
    username:
    password:
