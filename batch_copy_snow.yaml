@@ -24,7 +24,7 @@
       register: errorCode
       ignore_errors: True
       #changed_when: False
-      changed_when: errorCode.rc = -9
+      changed_when: errorCode.rc == -9
 
     - name: look at errorCode
       debug:
