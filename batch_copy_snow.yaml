@@ -15,6 +15,7 @@
       copy: 
         src: /home/student1/testdir/dummy.iso
         dest: /tmp/dummy.iso
+      remote_src: yes
       #validate: /usr/sbin/visudo -cf %s
       register: errorCode
       ignore_errors: True
