@@ -17,11 +17,12 @@
       #validate: /usr/sbin/visudo -cf %s
       register: errorCode
       ignore_errors: True
-      changed_when: "'Killed' in errorCode.stdout"
+      changed_when: False
 
     - name: look at errorCode
       debug:
         var: errorCode
+      changed_when: "'Killed' in errorCode.stdout"
 
     - name: SERVICENOW incident created if Known Error detected
       block:
