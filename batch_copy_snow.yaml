@@ -54,4 +54,6 @@
     - name: DEBUG SNOW_VAR
       debug:
         var: snow_var.record.number
+  # - local_action: copy content={{ snow_var.record.number }} dest=/tmp/test1/1.2.txt
+
       #when: errorCode.changed
