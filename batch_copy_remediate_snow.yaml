@@ -8,6 +8,9 @@
   
   tasks:
     
+    - name: include vars
+      include_vars: incident_vars.yaml
+    
     - name: Batch job - copy files remotely
       command: cp /mnt/testdir/dummy.iso /tmp/testdir/dummy.iso
       #validate: /usr/sbin/visudo -cf %s
@@ -21,9 +24,9 @@
 
     - name: SERVICENOW incident udated if copy succeeded
       snow_record:
-        username: admin
-        password: MyPassw0rd21
-        instance: dev14202
+        username: "{{username}}"
+        password: "{{password}}"
+        instance: "{{instance}}"
         number: "{{number}}"
         state: present
         table: incident
