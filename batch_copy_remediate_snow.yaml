@@ -65,3 +65,7 @@
       register: snow_var
       delegate_to: localhost
       #when: errorCode.changed
+
+    - name: DEBUG SNOW_VAR
+      debug:
+        var: snow_var.record
