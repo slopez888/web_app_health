@@ -50,7 +50,7 @@
       #changed_when: errorCode.rc == 0
 
 
-    - name: SERVICENOW incident udated if copy succeeded
+    - name: SERVICENOW incident closed if batch job validation succeeded
       snow_record:
         username: "{{username}}"
         password: "{{password}}"
