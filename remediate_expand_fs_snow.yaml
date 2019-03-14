@@ -1,4 +1,4 @@
-- name: Known Error Demo (batch copy fail)
+- name: Unknown Error Demo (batch copy fail and expand fs remediation)
   hosts: all
   vars:
     username: 
