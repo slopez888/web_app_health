@@ -26,11 +26,15 @@
      yum:
        name: "{{ package }}"
        state: latest
-       register: patch_version
+
+   - name: Get package version
+     yum:
+       list: "{{ package }}"
+     register: patch_version
 
    - name: Verify latest certified version is installed and operational 
      set_fact:
-       patch_version_installed: "{{ patch_version | json_query(\"results[?yumstate=='installed'].release\") | last }}"
+       patch_version_installed: "{{ patch_version | json_query(\"results[?yumstate=='installed'].release\") }}"
    - debug:
-          var: patch_version_installed   
+       var: patch_version_installed   
           #    
