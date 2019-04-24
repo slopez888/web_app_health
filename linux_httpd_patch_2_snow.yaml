@@ -28,9 +28,9 @@
 
    - name: SERVICENOW incident created if Available Software Update for "{{ package }}" from Vendor detected
      snow_record:
-       username: admin
-       password: MyPassw0rd21
-       instance: 
+       username: "{{username}}"
+       password: "{{password}}"
+       instance: "{{instance}}"
        state: present
        table: incident
        data:
