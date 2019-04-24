@@ -1,5 +1,5 @@
 - name: software patch demo (httpd using yum package manager)
-  hosts: localhost
+  hosts: all
   vars:
     username: 
     password:
