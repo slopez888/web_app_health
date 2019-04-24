@@ -22,7 +22,7 @@
       debug:
         var: errorCode
 
-    - name: SERVICENOW incident udated and resolved if filesystem expanded and copy succeeded
+    - name: SERVICENOW incident updated and resolved if filesystem expanded and copy succeeded
       snow_record:
         username: "{{username}}"
         password: "{{password}}"
