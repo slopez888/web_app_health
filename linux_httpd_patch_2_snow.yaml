@@ -11,6 +11,7 @@
      yum:
        list: "{{ package }}"
      register: software_version
+     become: true
 
    - name: Read which version is installed and available
      set_fact:
@@ -52,6 +53,7 @@
      yum:
        name: "{{ package }}"
        state: latest
+     become: true
 
    - name: SERVICENOW incident updated and resolved if patch update process succeeded
      snow_record:
@@ -72,6 +74,7 @@
      yum:
        list: "{{ package }}"
      register: patch_version
+     become: true
 
    - name: Verify latest certified version is installed and operational 
      set_fact:
