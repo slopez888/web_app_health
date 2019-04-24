@@ -32,4 +32,5 @@
      set_fact:
        patch_version_installed: "{{ patch_version | json_query(\"results[?yumstate=='installed'].release\") | last }}"
    - debug:
-          var: patch_version_installed       
+          var: patch_version_installed   
+          #    
