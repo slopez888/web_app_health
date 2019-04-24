@@ -92,7 +92,7 @@
         table: incident
         data:
           caller_id: "System Administrator"
-          comments: "The upgraded version of softwar has now been validated on {{inventory_hostname}}. The validated upgrade software version is {{patch_version_installed}} This ticket was closed by Ansible Tower API call in a validation playboook. \n--------\n The status code is {{errorCode.rc}}\n--------\n "
+          comments: "The upgraded version of softwar has now been validated on {{inventory_hostname}}. The validated upgrade software version is {{patch_version_installed}} This ticket was closed by Ansible Tower API call in a validation playboook. \n--------\n The update patching processing process has now been completed.\n--------\n "
           incident_state: 7
      register: snow_var
      delegate_to: localhost
