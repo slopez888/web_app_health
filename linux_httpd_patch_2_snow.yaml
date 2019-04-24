@@ -3,7 +3,7 @@
   vars:
     username: 
     password:
-    instance: dev71983
+    instance: 
     package: httpd
 
   tasks:
