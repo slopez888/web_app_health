@@ -1,0 +1,35 @@
+- name: software patch demo (httpd using yum package manager)
+  hosts: localhost
+  vars:
+    username: 
+    password:
+    instance: 
+    package: httpd
+
+  tasks:
+   - name: Get package version
+     yum:
+       list: "{{ package }}"
+     register: software_version
+
+   - name: Read which version is installed and available
+     set_fact:
+       software_update: false
+       software_version_installed: "{{ software_version | json_query(\"results[?yumstate=='installed'].release\") | last }}"
+       software_version_available: "{{ software_version | json_query(\"results[?yumstate=='available'].release\") }}"
+   - debug:
+       var: software_version_installed
+   - debug:
+       var: software_version_available
+
+   - name: Patch "{{ package }}" to latest certified version
+     yum:
+       name: "{{ package }}"
+       state: latest
+       register: patch_version
+
+   - name: Verify latest certified version is installed and operational 
+     set_fact:
+       patch_version_installed: "{{ patch_version | json_query(\"results[?yumstate=='installed'].release\") | last }}"
+   - debug:
+          var: patch_version_installed       

@@ -1,0 +1,24 @@
+- name: software patch demo (httpd using yum package manager)
+  hosts: localhost
+  vars:
+    username: 
+    password:
+    instance: 
+    packages:
+    - httpd
+
+  tasks:
+   - name: Get package version
+     yum:
+       list: "{{ packages }}"
+     register: software_version
+
+   - name: Read which version is installed and available
+     set_fact:
+       software_update: false
+       software_version_installed: "{{ software_version | json_query(\"results[?yumstate=='installed'].version\") | last }}"
+       software_version_available: "{{ software_version | json_query(\"results[?yumstate=='available'].version\") }}"
+   - debug:
+       var: software_version_installed
+   - debug:
+       var: software_version_available
