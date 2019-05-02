@@ -22,7 +22,7 @@
         username: "{{username}}"
         password: "{{password}}"
         instance: "{{instance}}"
-        number: "{{snow_var.record.number}}"
+        number: "{{number}}"
         state: present
         table: incident
         data:
