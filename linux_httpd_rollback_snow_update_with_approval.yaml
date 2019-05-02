@@ -27,7 +27,7 @@
         table: incident
         data:
           caller_id: "System Administrator"
-          comments: "The software update process has now succeeded on {{inventory_hostname}} for software package {{package}}. This ticket was resolved by Ansible Tower API call in an update/patching playboook. \n--------\n The verification process will now start.\n--------\n "
+          comments: "The dependencies were installed and the software update process has now succeeded on {{inventory_hostname}} for software package {{package}}. This ticket was resolved by Ansible Tower API call in an update/patching playboook. \n--------\n The verification process will now start.\n--------\n "
           incident_state: 6
      register: snow_var
      delegate_to: localhost
