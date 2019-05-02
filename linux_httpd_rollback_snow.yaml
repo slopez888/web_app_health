@@ -34,7 +34,7 @@
        state: present
        table: incident
        data:
-         short_description: "Software Update Available on {{inventory_hostname}} was found for Software Package {{ package }}. However, the minimum version to upgrade to a newer certified version is too old and requires new dependencies."
+         short_description: "Software Update Available on {{inventory_hostname}} was found for Software Package {{ package }}. However, the minimum version to upgrade from is too old and requires new dependencies."
          severity: 1
          priority: 2
          approval: requested
