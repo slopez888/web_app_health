@@ -1,5 +1,5 @@
 ---
-- name: Create Linux VM in vSphere
+- name: Create Linux VM in inventory
   hosts: localhost  
   connection: local
   gather_facts: no
