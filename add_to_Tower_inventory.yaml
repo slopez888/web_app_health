@@ -10,4 +10,4 @@
    
   tasks:
     - name: Create host in inventory to pass to next playbook
-      command: "tower-cli host create -n {{ vm_name }} -i 'Linux Inventory' --variables='{"ansible_user": "root", "ansible_host": "100.9.133.13"}'"
+      shell: tower-cli host create -n {{ vm_name }} -i 'Linux Inventory' --variables='{"ansible_user":"root", "ansible_host":"100.9.133.13"}'
