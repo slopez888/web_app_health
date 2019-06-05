@@ -7,13 +7,14 @@
     tower_user: 
     tower_password:
     vm_name: rhel7-0088
+    tower_inventory: Linux Inventory
    
   tasks:
    - name: Create host in inventory to pass to next playbook using tower-cli host create -n
      shell: |
        tower-cli config host localhost
        tower-cli login {{ tower_user }} --password {{ tower_password }}
-       tower-cli host create -n {{ vm_name }} -i 'Linux Inventory' --variables='{"ansible_user":"root", "ansible_host":"100.9.133.13"}'
+       tower-cli host create -n {{ vm_name }} -i {{ tower_inventory }} --variables='{"ansible_user":"root", "ansible_host":"100.9.133.13"}'
      no_log: true
 
    #- name: Create host in inventory to pass to next playbook using tower-cli host create -n
