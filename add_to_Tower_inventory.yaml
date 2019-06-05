@@ -9,7 +9,7 @@
     vm_name: rhel7-0088
    
   tasks:
-   - name: reate host in inventory to pass to next playbook
+   - name: Create host in inventory to pass to next playbook using tower-cli host create -n
      command: "{{ item }}"
      no_log: true
      with_items:
@@ -22,3 +22,4 @@
    #     tower-cli config host localhost
    #     tower-cli login {{ tower_user }} --password {{ tower_password }}
    #     tower-cli host create -n {{ vm_name }} -i 'Linux Inventory' --variables='{"ansible_user":"root", "ansible_host":"100.9.133.13"}'
+   #     no_log: true
