@@ -11,6 +11,7 @@
   tasks:
    - name: reate host in inventory to pass to next playbook
      command: "{{ item }}"
+     no_log: true
      with_items:
        - tower-cli config host localhost
        - tower-cli login {{ tower_user }} --password {{ tower_password }}
