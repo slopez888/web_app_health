@@ -7,7 +7,7 @@
     tower_user: 
     tower_password:
     vm_name: rhel7-0088
-    tower_inventory: Linux Inventory
+    tower_inventory: 'Linux Inventory'
    
   tasks:
    - name: Create host in inventory to pass to next playbook using tower-cli host create -n
