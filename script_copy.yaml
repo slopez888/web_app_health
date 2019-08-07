@@ -1,0 +1,16 @@
+---
+
+- name: Git clone on jumphost
+  hosts: jumphost
+  git:
+    repo: git@github.com:mylogin/hello.git
+    dest: /home/mylogin/hello
+  
+- name: copy script from jumphost
+  hosts: linux
+  fetch: 
+
+
+- name: run script remotely
+  hosts: linux
+  script: /some/local/script.sh --some-argument 1234
