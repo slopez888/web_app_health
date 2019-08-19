@@ -5,6 +5,7 @@
     password:
     instance: 
     package: httpd
+    sn_host_name:
 
   tasks:
    - name: Get package version
