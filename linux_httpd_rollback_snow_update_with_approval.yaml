@@ -27,7 +27,7 @@
         table: incident
         data:
           caller_id: "System Administrator"
-          comments: "The dependencies were installed and the software update process has now succeeded on {{inventory_hostname}} for software package {{package}}. This ticket was resolved by Ansible Tower API call in an update/patching playboook. \n--------\n The verification process will now start.\n--------\n "
+          comments: "The dependencies were installed and the software update process has now succeeded on {{sn_host_name}}, {{inventory_hostname}} for software package {{package}}. This ticket was resolved by Ansible Tower API call in an update/patching playboook. \n--------\n The verification process will now start.\n--------\n "
           incident_state: 6
      register: snow_var
      delegate_to: localhost
@@ -54,7 +54,7 @@
         table: incident
         data:
           caller_id: "System Administrator"
-          comments: "The upgraded version of software has now been validated on {{inventory_hostname}}. The validated upgrade software version is {{patch_version_installed}} This ticket was closed by Ansible Tower API call in a validation playboook. \n--------\n The update patching process has now been completed.\n--------\n "
+          comments: "The upgraded version of software has now been validated on {{sn_host_name}}, {{inventory_hostname}}. The validated upgrade software version is {{patch_version_installed}} This ticket was closed by Ansible Tower API call in a validation playboook. \n--------\n The update patching process has now been completed.\n--------\n "
           incident_state: 7
      register: snow_var
      delegate_to: localhost
