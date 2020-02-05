@@ -47,7 +47,7 @@
 
 ## Changes start below this line
    - name: Validate service is started and running
-     service:
+     systemd:
        name: "{{ package }}"
        state: started
 
