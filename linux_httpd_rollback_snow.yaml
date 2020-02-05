@@ -31,7 +31,7 @@
      snow_record:
        username: "{{username}}"
        password: "{{password}}"
-       instance: dev71983
+       instance: "{{instance}}"
        state: present
        table: incident
        data:
