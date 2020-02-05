@@ -51,6 +51,7 @@
        name: "{{ package }}"
        state: started
        enabled: yes
+     become: true
 
    - name: Validate Web application is healthy and operational
      uri:
@@ -71,6 +72,7 @@
      systemd:
       name: httpd
       state: restarted
+     become: true
 
 ## Changes end above this line
   
