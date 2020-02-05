@@ -67,12 +67,12 @@
      changed_when: app_health.status != 200
      notify: App is not running, restart HTTPD
 
-  handlers: 
-   - name: App is not running, restart HTTPD
-     systemd:
-      name: httpd
-      state: restarted
-     become: true
+#  handlers: 
+#   - name: App is not running, restart HTTPD
+#     systemd:
+#      name: httpd
+#      state: restarted
+#     become: true
 
 ## Changes end above this line
   
@@ -90,3 +90,10 @@
           incident_state: 7
      register: snow_var
      delegate_to: localhost
+
+  handlers: 
+   - name: App is not running, restart HTTPD
+     systemd:
+      name: httpd
+      state: restarted
+     become: true  
