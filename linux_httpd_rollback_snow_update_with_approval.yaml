@@ -43,7 +43,35 @@
      set_fact:
        patch_version_installed: "{{ patch_version | json_query(\"results[?yumstate=='installed'].release\") }}"
    - debug:
-       var: patch_version_installed   
+       var: patch_version_installed 
+
+## Changes start below this line
+   - name: Validate service is started and running
+     service:
+       name: "{{ package }}"
+       state: started
+
+   - name: Validate Web application is healthy and operational
+     uri:
+       url: http://34.218.80.151/
+       return_content: yes
+     register: app_health
+     ignore_errors: True
+     changed_when: False   
+
+   - name: "Print status"
+     debug: 
+       var: app_health.status
+     changed_when: app_health.status != 200
+     notify: App is not running, restart HTTPD
+
+  handlers: 
+   - name: App is not running, restart HTTPD
+     service:
+      name: httpd
+      state: started
+
+## Changes end above this line
   
    - name: SERVICENOW incident closed if batch job validation succeeded
      snow_record:
