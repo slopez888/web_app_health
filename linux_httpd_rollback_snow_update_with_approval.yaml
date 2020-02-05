@@ -50,6 +50,7 @@
      systemd:
        name: "{{ package }}"
        state: started
+       enabled: yes
 
    - name: Validate Web application is healthy and operational
      uri:
@@ -67,9 +68,9 @@
 
   handlers: 
    - name: App is not running, restart HTTPD
-     service:
+     systemd:
       name: httpd
-      state: started
+      state: restarted
 
 ## Changes end above this line
   
