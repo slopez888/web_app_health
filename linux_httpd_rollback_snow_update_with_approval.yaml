@@ -45,7 +45,6 @@
    - debug:
        var: patch_version_installed 
 
-## Changes start below this line
    - name: Validate service is started and running
      systemd:
        name: "{{ package }}"
@@ -66,8 +65,6 @@
        var: app_health.status
      changed_when: app_health.status != 200
      notify: App is not running, restart HTTPD
-
-## Changes end above this line
   
    - name: SERVICENOW incident closed if batch job validation succeeded
      snow_record:
