@@ -12,11 +12,8 @@
   tasks:
     - name: Remove current packages
       yum:
-        name:
-          - "{{ item }}"
+        name: "{{ current_packages }}"
         state: absent
-        with_items:
-          - "{{ current_packages }}"
         
     - name: Install old version
       yum:
