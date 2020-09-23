@@ -1,0 +1,23 @@
+---
+- name: Removing and installing requested packages
+  hosts: all
+  gather_facts: False
+  vars:
+      current_packages:
+        - httpd
+        - httpd-tools
+       older_packages:
+         - httpd-2.4.6-31.el7_1.1
+
+  tasks:
+    - name: Remove current packages
+      yum:
+        name:
+          - "{{ current_packages }}"
+        state: absent
+        
+    - name: Install old version
+      yum:
+        name:
+          - "{{ older_packages }}"
+        state: present
