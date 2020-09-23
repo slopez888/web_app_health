@@ -13,11 +13,15 @@
     - name: Remove current packages
       yum:
         name:
-          - "{{ current_packages }}"
+          - "{{ item }}"
         state: absent
+        with_items:
+          - "{{ current_packages }}"
         
     - name: Install old version
       yum:
         name:
-          - "{{ older_packages }}"
+          - "{{ item }}"
         state: present
+        with_item:
+          - "{{ older_packages }}"
