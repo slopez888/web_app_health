@@ -17,8 +17,5 @@
         
     - name: Install old version
       yum:
-        name:
-          - "{{ item }}"
+        name: "{{ older_packages }}"
         state: present
-        with_item:
-          - "{{ older_packages }}"
