@@ -6,8 +6,8 @@
       current_packages:
         - httpd
         - httpd-tools
-       older_packages:
-         - httpd-2.4.6-31.el7_1.1
+      older_packages:
+        - httpd-2.4.6-31.el7_1.1
 
   tasks:
     - name: Remove current packages
