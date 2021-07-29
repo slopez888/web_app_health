@@ -3,8 +3,10 @@
   gather_facts: no
   connection: local
   vars:
-    date_later: 2021-01-05 07:30:00
-    date_earlier: 2021-01-05 06:55:00
+    date_later: 2021-01-05 08:30:00
+    date_earlier: 2021-01-05 06:50:00
   tasks:
+    - debug:
+        msg: "{{ ( (date_later - date_earlier).total_seconds() / 3600 ) }}"
     - debug:
         msg: "{{ ( (date_later - date_earlier).total_seconds() / 3600 ) | int }}"
