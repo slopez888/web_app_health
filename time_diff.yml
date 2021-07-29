@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  gather_facts: no
+  connection: local
+  vars:
+    date_later: 2021-01-05 06:30:00
+    date_earlier: 2021-01-05 06:55:00
+  tasks:
+    - debug:
+        msg: "{{ ( (date_later - date_earlier).total_seconds() / 3600 ) | int }}
