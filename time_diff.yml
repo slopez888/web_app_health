@@ -7,4 +7,4 @@
     date_earlier: 2021-01-05 06:55:00
   tasks:
     - debug:
-        msg: "{{ ( (date_later - date_earlier).total_seconds() / 3600 ) | int }}
+        msg: "{{ ( (date_later - date_earlier).total_seconds() / 3600 ) | int }}"
